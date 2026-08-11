@@ -19,7 +19,7 @@ const Skills = () => {
       <section aria-labelledby="technical" className="mb-12">
         <h2
           id="technical"
-          className="mb-5 text-xl font-semibold text-brand-dark"
+          className="mb-5 text-xl font-semibold text-foreground transition-colors duration-300 dark:text-white"
         >
           Technical Skills
         </h2>
@@ -27,9 +27,9 @@ const Skills = () => {
           {skillGroups.map((group) => (
             <article
               key={group.category}
-              className="rounded-2xl border border-black/10 bg-white p-6"
+              className="rounded-2xl border border-black/10 bg-white p-6 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800"
             >
-              <h3 className="mb-5 text-sm font-semibold uppercase tracking-widest text-brand-green">
+              <h3 className="mb-5 text-sm font-semibold uppercase tracking-widest text-primary">
                 {group.category}
               </h3>
               <ul className="space-y-4">
@@ -43,19 +43,19 @@ const Skills = () => {
       </section>
 
       <section aria-labelledby="soft" className="mb-12">
-        <h2 id="soft" className="mb-5 text-xl font-semibold text-brand-dark">
+        <h2 id="soft" className="mb-5 text-xl font-semibold text-foreground transition-colors duration-300 dark:text-white">
           Soft Skills
         </h2>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {softSkills.map((s) => (
             <li
               key={s.name}
-              className="rounded-2xl border border-black/10 bg-white p-5"
+              className="rounded-2xl border border-black/10 bg-white p-5 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800"
             >
-              <h3 className="text-base font-semibold text-brand-dark">
+              <h3 className="text-base font-semibold text-foreground dark:text-white">
                 {s.name}
               </h3>
-              <p className="mt-1.5 text-sm text-gray-600">{s.desc}</p>
+              <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300">{s.desc}</p>
             </li>
           ))}
         </ul>
@@ -64,7 +64,7 @@ const Skills = () => {
       <section aria-labelledby="languages">
         <h2
           id="languages"
-          className="mb-5 text-xl font-semibold text-brand-dark"
+          className="mb-5 text-xl font-semibold text-foreground transition-colors duration-300 dark:text-white"
         >
           Languages
         </h2>
@@ -72,17 +72,17 @@ const Skills = () => {
           {languages.map((l) => (
             <li
               key={l.name}
-              className="flex items-start gap-3 rounded-2xl border border-black/10 bg-white p-5"
+              className="flex items-start gap-3 rounded-2xl border border-black/10 bg-white p-5 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800"
             >
               <Languages
-                className="mt-0.5 h-4 w-4 shrink-0 text-brand-green"
+                className="mt-0.5 h-4 w-4 shrink-0 text-primary"
                 aria-hidden="true"
               />
               <div>
-                <h3 className="text-base font-semibold text-brand-dark">
+                <h3 className="text-base font-semibold text-foreground dark:text-white">
                   {l.name}
                 </h3>
-                <p className="mt-1 text-sm text-gray-600">{l.level}</p>
+                <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{l.level}</p>
               </div>
             </li>
           ))}

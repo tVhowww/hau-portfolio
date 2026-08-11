@@ -15,7 +15,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="flex min-h-screen flex-col bg-brand-bg text-brand-dark">
+    <div className="flex min-h-screen flex-col bg-background text-foreground transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100">
       <NavBar />
       <main className="flex-1">
         <PageTransition>

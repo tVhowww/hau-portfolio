@@ -54,7 +54,7 @@ const Contact = () => {
   ];
 
   const fieldClass = (hasError: boolean) =>
-    `w-full rounded-xl border bg-white px-4 py-3 text-sm text-brand-dark outline-none transition-colors focus:border-brand-green ${hasError ? "border-red-500" : "border-black/10"
+    `w-full rounded-xl border bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary dark:bg-gray-900 dark:text-gray-100 ${hasError ? "border-red-500" : "border-black/10 dark:border-white/10"
     }`;
 
   return (
@@ -66,15 +66,15 @@ const Contact = () => {
       />
 
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-        <section aria-labelledby="contact-form-title" className="rounded-2xl border border-black/10 bg-white p-6 sm:p-8">
-          <h2 id="contact-form-title" className="mb-6 text-xl font-semibold text-brand-dark">
+        <section aria-labelledby="contact-form-title" className="rounded-2xl border border-black/10 bg-white p-6 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800 sm:p-8">
+          <h2 id="contact-form-title" className="mb-6 text-xl font-semibold text-foreground transition-colors duration-300 dark:text-white">
             Send a message
           </h2>
 
           <form onSubmit={onSubmit} noValidate className="space-y-5">
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="mb-2 block text-sm font-medium text-brand-dark">
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-foreground dark:text-gray-300">
                   Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -95,7 +95,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-medium text-brand-dark">
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-foreground dark:text-gray-300">
                   Email <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -117,7 +117,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="subject" className="mb-2 block text-sm font-medium text-brand-dark">
+              <label htmlFor="subject" className="mb-2 block text-sm font-medium text-foreground dark:text-gray-300">
                 Subject <span className="text-red-500">*</span>
               </label>
               <input
@@ -138,7 +138,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="mb-2 block text-sm font-medium text-brand-dark">
+              <label htmlFor="message" className="mb-2 block text-sm font-medium text-foreground dark:text-gray-300">
                 Message <span className="text-red-500">*</span>
               </label>
               <textarea
@@ -156,7 +156,7 @@ const Contact = () => {
                   {errors.message}
                 </p>
               ) : (
-                <p id="message-hint" className="mt-1.5 text-xs text-gray-500">
+                <p id="message-hint" className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
                   Minimum 20 characters ({values.message.trim().length}/20).
                 </p>
               )}
@@ -165,7 +165,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-3 text-sm font-semibold text-white transition-opacity disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-opacity disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary hover:opacity-90 cursor-pointer"
             >
               {status === "loading" ? (
                 <>
@@ -180,7 +180,7 @@ const Contact = () => {
 
             <div aria-live="polite" className="mt-4 min-h-10">
               {status === "success" && (
-                <div className="inline-flex items-center gap-2 rounded-xl border border-brand-green/20 bg-brand-green-light px-4 py-2.5 text-sm text-brand-green">
+                <div className="inline-flex items-center gap-2 rounded-xl border border-primary/20 bg-secondary px-4 py-2.5 text-sm text-primary dark:border-primary/20 dark:bg-primary/20">
                   <CheckCircle2 className="h-4 w-4 shrink-0" aria-hidden="true" />
                   <span>Thank you! Your message has been sent, I will get back to you soon.</span>
                 </div>
@@ -189,27 +189,27 @@ const Contact = () => {
           </form>
         </section>
 
-        <section aria-labelledby="channels-title" className="h-fit rounded-2xl border border-black/10 bg-white p-6 sm:p-8">
-          <h2 id="channels-title" className="mb-6 text-xl font-semibold text-brand-dark">
+        <section aria-labelledby="channels-title" className="h-fit rounded-2xl border border-black/10 bg-white p-6 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800 sm:p-8">
+          <h2 id="channels-title" className="mb-6 text-xl font-semibold text-foreground transition-colors duration-300 dark:text-white">
             Contact Channels
           </h2>
           <ul className="space-y-4">
             {channels.map(({ icon: Icon, label, value, href }) => (
               <li key={label} className="flex items-start gap-3">
-                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" aria-hidden="true" />
+                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                 <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-wider text-gray-500">{label}</p>
+                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">{label}</p>
                   {href ? (
                     <a
                       href={href}
                       target={href.startsWith("http") ? "_blank" : undefined}
                       rel="noreferrer"
-                      className="break-words text-sm font-medium text-brand-dark hover:text-brand-green transition-colors"
+                      className="break-words text-sm font-medium text-foreground transition-colors hover:text-primary dark:text-gray-100 dark:hover:text-primary"
                     >
                       {value}
                     </a>
                   ) : (
-                    <p className="text-sm font-medium text-brand-dark">{value}</p>
+                    <p className="text-sm font-medium text-foreground dark:text-gray-100">{value}</p>
                   )}
                 </div>
               </li>

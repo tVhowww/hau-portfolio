@@ -77,7 +77,7 @@ const Resume = () => {
       <section aria-labelledby="personal-info" className="mb-12">
         <h2
           id="personal-info"
-          className="mb-4 text-xl font-semibold text-brand-dark"
+          className="mb-4 text-xl font-semibold text-foreground transition-colors duration-300 dark:text-white"
         >
           Personal Information
         </h2>
@@ -85,23 +85,23 @@ const Resume = () => {
           {info.map(({ icon: Icon, label, value, href }) => (
             <div
               key={label}
-              className="flex items-start gap-3 rounded-xl border border-black/10 bg-white p-4"
+              className="flex items-start gap-3 rounded-xl border border-black/10 bg-white p-4 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800"
             >
               <Icon
-                className="mt-0.5 h-4 w-4 shrink-0 text-brand-green"
+                className="mt-0.5 h-4 w-4 shrink-0 text-primary"
                 aria-hidden="true"
               />
               <div className="min-w-0">
-                <dt className="text-xs uppercase tracking-wider text-gray-500">
+                <dt className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
                   {label}
                 </dt>
-                <dd className="mt-1 truncate text-sm font-medium text-brand-dark">
+                <dd className="mt-1 truncate text-sm font-medium text-foreground dark:text-gray-100">
                   {href ? (
                     <a
                       href={href}
                       target={href.startsWith("http") ? "_blank" : undefined}
                       rel="noreferrer"
-                      className="hover:text-brand-green"
+                      className="hover:text-primary"
                     >
                       {value}
                     </a>
@@ -119,16 +119,16 @@ const Resume = () => {
       <section aria-labelledby="objective" className="mb-12">
         <h2
           id="objective"
-          className="mb-4 text-xl font-semibold text-brand-dark"
+          className="mb-4 text-xl font-semibold text-foreground"
         >
           Career Objective
         </h2>
-        <ul className="space-y-3 rounded-2xl border border-black/10 bg-white p-6 text-sm leading-relaxed text-gray-600">
+        <ul className="space-y-3 rounded-2xl border border-black/10 bg-white p-6 text-sm leading-relaxed text-gray-600 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800 dark:text-gray-300">
           {objective.map((line) => (
             <li key={line} className="flex gap-3">
               <span
                 aria-hidden="true"
-                className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-green"
+                className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary"
               />
               <span>{line}</span>
             </li>
@@ -140,7 +140,7 @@ const Resume = () => {
       <section aria-labelledby="timeline">
         <h2
           id="timeline"
-          className="mb-4 text-xl font-semibold text-brand-dark"
+          className="mb-4 text-xl font-semibold text-foreground"
         >
           Timeline
         </h2>
@@ -159,10 +159,10 @@ const Resume = () => {
               aria-selected={active === tab.id}
               aria-controls={`panel-${tab.id}`}
               onClick={() => setActive(tab.id)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green cursor-pointer ${
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer ${
                 active === tab.id
-                  ? "bg-brand-green text-white"
-                  : "border border-black/10 text-gray-600 hover:text-brand-dark"
+                  ? "bg-primary text-white"
+                  : "border border-black/10 text-gray-600 hover:text-foreground dark:border-white/10 dark:text-gray-300 dark:hover:text-white"
               }`}
             >
               {tab.label}
@@ -179,21 +179,21 @@ const Resume = () => {
           {items.map((item) => (
             <article
               key={item.title}
-              className="rounded-2xl border border-black/10 border-l-2 border-l-brand-green bg-white p-5"
+              className="rounded-2xl border border-black/10 border-l-2 border-l-primary bg-white p-5 transition-colors duration-300 dark:border-white/10 dark:border-l-primary dark:bg-gray-800"
             >
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-base font-semibold text-brand-dark">
+                <h3 className="text-base font-semibold text-foreground dark:text-white">
                   {item.title}
                 </h3>
-                <span className="text-xs text-gray-500">{item.period}</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">{item.period}</span>
               </div>
-              <p className="mt-1 text-sm text-brand-green">{item.subtitle}</p>
-              <ul className="mt-3 space-y-1.5 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-primary">{item.subtitle}</p>
+              <ul className="mt-3 space-y-1.5 text-sm text-gray-600 dark:text-gray-300">
                 {item.details.map((d) => (
                   <li key={d} className="flex gap-2">
                     <span
                       aria-hidden="true"
-                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-green"
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary"
                     />
                     <span>{d}</span>
                   </li>

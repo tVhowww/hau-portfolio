@@ -18,13 +18,13 @@ export function PageHeader({
 }) {
   return (
     <header className="mb-10 max-w-2xl">
-      <p className="mb-3 inline-flex items-center rounded-full border border-brand-green-light bg-brand-green-light px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-green">
+      <p className="mb-3 inline-flex items-center rounded-full border border-secondary bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary transition-colors duration-300 dark:border-primary/20 dark:bg-primary/20">
         {eyebrow}
       </p>
-      <h1 className="text-3xl font-bold text-brand-dark sm:text-4xl">
+      <h1 className="text-3xl font-bold text-foreground transition-colors duration-300 dark:text-white sm:text-4xl">
         {title}
       </h1>
-      {description && <p className="mt-3 text-gray-600">{description}</p>}
+      {description && <p className="mt-3 text-gray-600 transition-colors duration-300 dark:text-gray-300">{description}</p>}
     </header>
   );
 }

@@ -50,7 +50,7 @@ const Projects = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search project..."
-            className="w-full rounded-full border border-black/10 bg-white py-2.5 pl-10 pr-4 text-sm text-brand-dark outline-none transition-colors focus:border-brand-green"
+            className="w-full rounded-full border border-black/10 bg-white py-2.5 pl-10 pr-4 text-sm text-foreground outline-none transition-colors focus:border-primary dark:border-white/10 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500"
           />
         </div>
 
@@ -61,9 +61,9 @@ const Projects = () => {
               type="button"
               onClick={() => setTag(null)}
               aria-pressed={tag === null}
-              className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green ${tag === null
-                ? "bg-brand-green text-white"
-                : "border border-black/10 text-gray-500 hover:text-brand-dark"
+              className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${tag === null
+                ? "bg-primary text-white"
+                : "border border-black/10 text-gray-500 hover:text-foreground dark:border-white/10 dark:text-gray-400 dark:hover:text-white"
                 }`}
             >
               All
@@ -75,9 +75,9 @@ const Projects = () => {
                 type="button"
                 onClick={() => setTag(tag === t ? null : t)}
                 aria-pressed={tag === t}
-                className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green ${tag === t
-                  ? "bg-brand-green text-white"
-                  : "border border-black/10 text-gray-500 hover:text-brand-dark"
+                className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${tag === t
+                  ? "bg-primary text-white"
+                  : "border border-black/10 text-gray-500 hover:text-foreground dark:border-white/10 dark:text-gray-400 dark:hover:text-white"
                   }`}
               >
                 {t}
@@ -89,7 +89,7 @@ const Projects = () => {
 
       {/* Cards grid */}
       {filtered.length === 0 ? (
-        <p className="rounded-2xl border border-black/10 bg-white p-8 text-center text-sm text-gray-500">
+        <p className="rounded-2xl border border-black/10 bg-white p-8 text-center text-sm text-gray-500 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800 dark:text-gray-400">
           No projects found. Try another keyword or technology.
         </p>
       ) : (

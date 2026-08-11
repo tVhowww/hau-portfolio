@@ -20,13 +20,13 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -12 }}
       transition={{ duration: 0.35, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
-      className="flex flex-col rounded-2xl border border-black/10 border-l-2 border-l-brand-green bg-white p-6 shadow-sm"
+      className="flex flex-col rounded-2xl border border-black/10 border-l-2 border-l-primary bg-white p-6 shadow-sm transition-colors duration-300 dark:border-white/10 dark:border-l-primary dark:bg-gray-800"
     >
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <h2 className="text-lg font-semibold text-brand-dark">{project.name}</h2>
-          <p className="mt-0.5 flex items-center gap-1.5 text-xs text-gray-500">
+          <h2 className="text-lg font-semibold text-foreground transition-colors duration-300 dark:text-white">{project.name}</h2>
+          <p className="mt-0.5 flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
             <CalendarDays className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
             {project.period}
           </p>
@@ -40,7 +40,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               target="_blank"
               rel="noreferrer"
               aria-label={`GitHub repo for ${project.name}`}
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 text-gray-500 transition-colors hover:border-brand-green hover:text-brand-green"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 text-gray-500 transition-colors hover:border-primary hover:text-primary dark:border-white/10 dark:text-gray-400 dark:hover:border-primary dark:hover:text-primary"
             >
               <GithubIcon className="h-4 w-4" aria-hidden="true" />
             </a>
@@ -51,7 +51,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               target="_blank"
               rel="noreferrer"
               aria-label={`Live demo for ${project.name}`}
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 text-gray-500 transition-colors hover:border-brand-green hover:text-brand-green"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 text-gray-500 transition-colors hover:border-primary hover:text-primary dark:border-white/10 dark:text-gray-400 dark:hover:border-primary dark:hover:text-primary"
             >
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
             </a>
@@ -59,7 +59,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <span
               title="No live demo"
               aria-label="No live demo"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 text-gray-300 cursor-not-allowed"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 text-gray-300 cursor-not-allowed dark:border-white/10 dark:text-gray-600"
             >
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
             </span>
@@ -68,15 +68,15 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       {/* Description */}
-      <p className="mt-3 text-sm leading-relaxed text-gray-600">{project.description}</p>
+      <p className="mt-3 text-sm leading-relaxed text-gray-600 transition-colors duration-300 dark:text-gray-300">{project.description}</p>
 
       {/* Highlights */}
-      <ul className="mt-4 space-y-1.5 text-sm text-gray-600">
+      <ul className="mt-4 space-y-1.5 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-300">
         {project.highlights.map((h) => (
           <li key={h} className="flex gap-2">
             <span
               aria-hidden="true"
-              className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-green"
+              className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary"
             />
             <span>{h}</span>
           </li>
@@ -88,7 +88,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         {project.tags.map((tag) => (
           <li
             key={tag}
-            className="rounded-full border border-brand-green/30 bg-brand-green-light px-2.5 py-0.5 text-xs font-medium text-brand-green"
+            className="rounded-full border border-primary/30 bg-secondary px-2.5 py-0.5 text-xs font-medium text-primary transition-colors duration-300 dark:border-primary/20 dark:bg-primary/20"
           >
             {tag}
           </li>
