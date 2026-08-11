@@ -28,7 +28,7 @@ export function PageTransition({ children }: { children: ReactNode }) {
       <motion.div
         key={`bar-${pathname}`}
         aria-hidden="true"
-        className="pointer-events-none fixed left-0 top-0 z-50 h-1 bg-brand-green shadow-[0_0_8px_var(--color-brand-green)]"
+        className="pointer-events-none fixed left-0 top-0 z-50 h-1 bg-primary shadow-[0_0_8px_var(--color-primary)]"
         initial={{ scaleX: 0, opacity: 1 }}
         animate={{ scaleX: 1, opacity: 0 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}

@@ -10,13 +10,13 @@ export function SkillBar({ skill, index }: { skill: Skill; index: number }) {
   return (
     <li>
       <div className="mb-2 flex items-center justify-between gap-3">
-        <span className="min-w-0 truncate text-sm font-medium text-brand-dark">
+        <span className="min-w-0 truncate text-sm font-medium text-foreground dark:text-white">
           {skill.name}
         </span>
-        <span className="shrink-0 text-xs text-gray-500">{skill.level}%</span>
+        <span className="shrink-0 text-xs text-gray-500 dark:text-gray-400">{skill.level}%</span>
       </div>
       <div
-        className="h-2 w-full overflow-hidden rounded-full bg-gray-200"
+        className="h-2 w-full overflow-hidden rounded-full bg-gray-200 transition-colors duration-300 dark:bg-gray-700"
         role="progressbar"
         aria-label={skill.name}
         aria-valuenow={skill.level}
@@ -24,7 +24,7 @@ export function SkillBar({ skill, index }: { skill: Skill; index: number }) {
         aria-valuemax={100}
       >
         <motion.div
-          className="h-full rounded-full bg-linear-to-r from-brand-green to-emerald-400"
+          className="h-full rounded-full bg-linear-to-r from-primary to-emerald-400"
           initial={{ width: 0 }}
           whileInView={{ width: `${skill.level}%` }}
           viewport={{ once: true, amount: 0.6 }}

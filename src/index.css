@@ -1,8 +1,67 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+:root {
+  --background: #F5FCF9;
+  --foreground: #10212F;
+  --card: #FFFFFF;
+  --card-foreground: #10212F;
+  --primary: #019D7E;
+  --primary-foreground: #F6FEFB;
+  --secondary: #E1F1EB;
+  --secondary-foreground: #023538;
+  --muted: #E6F1F0;
+  --muted-foreground: #51686F;
+  --accent: #CBF2E3;
+  --accent-foreground: #00372C;
+  --mint: #019D7E;
+  --mint-bright: #1FC094;
+  --destructive: #CC272E;
+  --destructive-foreground: #F6FEFB;
+  --border: #D3E1E0;
+  --input: #D3E1E0;
+  --ring: #31BE98;
+}
+
+:root.dark {
+  --background: #071727;
+  --foreground: #E6F1EF;
+  --card: #102233;
+  --card-foreground: #E6F1EF;
+  --primary: #2CD8B0;
+  --primary-foreground: #051525;
+  --secondary: #113F2A;
+  --secondary-foreground: #E6F1EF;
+  --muted: #1B2A39;
+  --muted-foreground: #94AAA8;
+  --accent: #113F2A;
+  --accent-foreground: #7EFFC2;
+  --mint: #2CD8B0;
+  --mint-bright: #7EFFC2;
+  --destructive: #F0555B;
+  --destructive-foreground: #F2FBF9;
+  --border: rgba(44, 216, 176, 0.18);
+  --input: rgba(44, 216, 176, 0.24);
+  --ring: #2CD8B0;
+}
 
 @theme {
-  --color-brand-bg: #f0fbf5;
-  --color-brand-green: #12b76a;
-  --color-brand-green-light: #e3f9ee;
-  --color-brand-dark: #16233a;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-mint: var(--mint);
+  --color-mint-bright: var(--mint-bright);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 }
