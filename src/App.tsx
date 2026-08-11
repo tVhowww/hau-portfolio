@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import NavBar from "./components/NavBar";
 import { PageTransition } from "./components/PageTransition";
 import { Footer } from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const location = useLocation();
@@ -27,6 +28,7 @@ function App() {
         </PageTransition>
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
