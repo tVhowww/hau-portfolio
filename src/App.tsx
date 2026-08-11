@@ -11,11 +11,14 @@ import { PageTransition } from "./components/PageTransition";
 import { Footer } from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
+import { ScrollRestoration } from "./components/ScrollRestoration";
+
 function App() {
   const location = useLocation();
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100">
+      <ScrollRestoration />
       <NavBar />
       <main className="flex-1">
         <PageTransition>
