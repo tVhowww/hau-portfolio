@@ -3,10 +3,10 @@ import { ArrowUp } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 /**
- * BackToTop - A floating button that appears when scrolling down
+ * ScrollToTop - A floating button that appears when scrolling down
  * and smoothly scrolls the user back to the top of the page
  */
-export function BackToTop() {
+const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -38,3 +38,5 @@ export function BackToTop() {
     </AnimatePresence>
   );
 }
+
+export default ScrollToTop;
