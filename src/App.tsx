@@ -5,6 +5,7 @@ import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import "./App.css";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 import NavBar from "./components/NavBar";
 import { PageTransition } from "./components/PageTransition";
 import { Footer } from "./components/Footer";
@@ -24,6 +25,7 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </PageTransition>
       </main>
