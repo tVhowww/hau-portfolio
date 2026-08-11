@@ -113,7 +113,7 @@ const NavBar = () => {
       {isOpen && (
         <div
           id="mobile-nav"
-          className="md:hidden border-t border-black/5 bg-white absolute w-full shadow-md"
+          className="md:hidden border-t border-black/5 bg-white w-full shadow-md"
         >
           <nav aria-label="Mobile navigation" className="px-6 py-4">
             <ul className="flex flex-col gap-1">
