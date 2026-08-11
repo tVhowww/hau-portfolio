@@ -8,6 +8,7 @@ export interface Project {
   name: string;
   description: string;
   tags: string[];
+  thumbnail: string;
   demoUrl?: string;
   repoUrl?: string;
   highlights: string[];
@@ -21,6 +22,7 @@ export const projects: Project[] = [
     description:
       "Real-time fullstack chat application with microservices, mobile support, and admin/moderation features.",
     tags: ["ReactJS", "Spring Boot", "RabbitMQ", "Redis", "Socket.io", "Zustand"],
+    thumbnail: "/alo-chat-thumbnail.jpg",
     repoUrl: "https://github.com/hoangtan22th/Alo-Full-Stack",
     period: "Jan 2026 – Jun 2026",
     highlights: [
@@ -35,6 +37,7 @@ export const projects: Project[] = [
     description:
       "Personal finance tracker with a 6-service Spring Cloud backend, Kafka Saga, and an AI-powered receipt parser.",
     tags: ["Next.js", "Spring Boot", "Kafka", "Redis", "Spring AI", "Recharts"],
+    thumbnail: "/fin-track-thumbnail.jpg",
     repoUrl: "https://github.com/tVhowww/FinTrack-Pro",
     demoUrl: "https://fintrack-pro-lake.vercel.app",
     period: "Dec 2025 – May 2026",
@@ -51,6 +54,7 @@ export const projects: Project[] = [
     description:
       "E-commerce watch store with Spring Boot REST API, VNPay integration, and ReactJS customer + admin flows.",
     tags: ["ReactJS", "Spring Boot", "VNPay", "Cloudinary"],
+    thumbnail: "/watch-store-thumbnail.jpg",
     repoUrl: "https://github.com/TanDuy274/DHKTPM18B_Nhom08_Website-ban-dong-ho",
     period: "Sept 2025 – Dec 2025",
     highlights: [
