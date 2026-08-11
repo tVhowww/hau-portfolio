@@ -22,6 +22,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       transition={{ duration: 0.35, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
       className="flex flex-col rounded-2xl border border-black/10 border-l-2 border-l-primary bg-white p-6 shadow-sm transition-colors duration-300 dark:border-white/10 dark:border-l-primary dark:bg-gray-800"
     >
+      {/* Thumbnail */}
+      <div className="relative mb-5 aspect-[16/9] w-full overflow-hidden rounded-xl border border-black/5 dark:border-white/5">
+        <img
+          src={project.thumbnail}
+          alt={`Thumbnail of ${project.name}`}
+          className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
