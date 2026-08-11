@@ -7,22 +7,26 @@ import "./App.css";
 import Contact from "./pages/Contact";
 import NavBar from "./components/NavBar";
 import { PageTransition } from "./components/PageTransition";
+import { Footer } from "./components/Footer";
 
 function App() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-dark">
+    <div className="flex min-h-screen flex-col bg-brand-bg text-brand-dark">
       <NavBar />
-      <PageTransition>
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </PageTransition>
+      <main className="flex-1">
+        <PageTransition>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </PageTransition>
+      </main>
+      <Footer />
     </div>
   );
 }
