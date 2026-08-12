@@ -36,7 +36,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <h2 className="text-lg font-semibold text-foreground transition-colors duration-300 dark:text-white">{project.name}</h2>
-          <p className="mt-0.5 flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+          <p className="mt-0.5 flex items-center gap-1.5 text-xs text-gray-600 dark:text-gray-300">
             <CalendarDays className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
             {project.period}
           </p>
@@ -50,7 +50,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               target="_blank"
               rel="noreferrer"
               aria-label={`GitHub repo for ${project.name}`}
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 text-gray-500 transition-colors hover:border-primary hover:text-primary dark:border-white/10 dark:text-gray-400 dark:hover:border-primary dark:hover:text-primary"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 text-gray-600 transition-colors hover:border-primary hover:text-primary dark:border-white/10 dark:text-gray-300 dark:hover:border-primary dark:hover:text-primary"
             >
               <GithubIcon className="h-4 w-4" aria-hidden="true" />
             </a>
@@ -61,7 +61,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               target="_blank"
               rel="noreferrer"
               aria-label={`Live demo for ${project.name}`}
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 text-gray-500 transition-colors hover:border-primary hover:text-primary dark:border-white/10 dark:text-gray-400 dark:hover:border-primary dark:hover:text-primary"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 text-gray-600 transition-colors hover:border-primary hover:text-primary dark:border-white/10 dark:text-gray-300 dark:hover:border-primary dark:hover:text-primary"
             >
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
             </a>

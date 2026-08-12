@@ -73,21 +73,21 @@ const Home = () => {
           </div>
 
           {/* Stat cards */}
-          <dl className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3">
             {profile.stats.map((stat) => (
-              <div
+              <li
                 key={stat.label}
                 className="rounded-xl border border-black/10 bg-white px-4 py-3 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800"
               >
-                <dt className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                <p className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-300">
                   {stat.label}
-                </dt>
-                <dd className="mt-1 text-lg font-semibold text-primary">
+                </p>
+                <p className="mt-1 text-lg font-semibold text-primary">
                   {stat.value}
-                </dd>
-              </div>
+                </p>
+              </li>
             ))}
-          </dl>
+          </ul>
         </motion.div>
 
         {/* Right column: avatar with glow + gradient frame */}
