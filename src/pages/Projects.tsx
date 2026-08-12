@@ -63,7 +63,7 @@ const Projects = () => {
               aria-pressed={tag === null}
               className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${tag === null
                 ? "bg-primary text-white"
-                : "border border-black/10 text-gray-500 hover:text-foreground dark:border-white/10 dark:text-gray-400 dark:hover:text-white"
+                : "border border-black/10 text-gray-600 hover:text-foreground dark:border-white/10 dark:text-gray-300 dark:hover:text-white"
                 }`}
             >
               All
@@ -77,7 +77,7 @@ const Projects = () => {
                 aria-pressed={tag === t}
                 className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${tag === t
                   ? "bg-primary text-white"
-                  : "border border-black/10 text-gray-500 hover:text-foreground dark:border-white/10 dark:text-gray-400 dark:hover:text-white"
+                  : "border border-black/10 text-gray-600 hover:text-foreground dark:border-white/10 dark:text-gray-300 dark:hover:text-white"
                   }`}
               >
                 {t}
@@ -89,7 +89,7 @@ const Projects = () => {
 
       {/* Cards grid */}
       {filtered.length === 0 ? (
-        <p className="rounded-2xl border border-black/10 bg-white p-8 text-center text-sm text-gray-500 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800 dark:text-gray-400">
+        <p className="rounded-2xl border border-black/10 bg-white p-8 text-center text-sm text-gray-600 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800 dark:text-gray-300">
           No projects found. Try another keyword or technology.
         </p>
       ) : (
