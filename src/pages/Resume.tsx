@@ -81,9 +81,9 @@ const Resume = () => {
         >
           Personal Information
         </h2>
-        <dl className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {info.map(({ icon: Icon, label, value, href }) => (
-            <div
+            <li
               key={label}
               className="flex items-start gap-3 rounded-xl border border-black/10 bg-white p-4 transition-colors duration-300 dark:border-white/10 dark:bg-gray-800"
             >
@@ -92,10 +92,10 @@ const Resume = () => {
                 aria-hidden="true"
               />
               <div className="min-w-0">
-                <dt className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                <p className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-300">
                   {label}
-                </dt>
-                <dd className="mt-1 truncate text-sm font-medium text-foreground dark:text-gray-100">
+                </p>
+                <p className="mt-1 truncate text-sm font-medium text-foreground dark:text-gray-100">
                   {href ? (
                     <a
                       href={href}
@@ -108,11 +108,11 @@ const Resume = () => {
                   ) : (
                     value
                   )}
-                </dd>
+                </p>
               </div>
-            </div>
+            </li>
           ))}
-        </dl>
+        </ul>
       </section>
 
       {/* Career objective */}
@@ -185,7 +185,7 @@ const Resume = () => {
                 <h3 className="text-base font-semibold text-foreground dark:text-white">
                   {item.title}
                 </h3>
-                <span className="text-xs text-gray-500 dark:text-gray-400">{item.period}</span>
+                <span className="text-xs text-gray-600 dark:text-gray-300">{item.period}</span>
               </div>
               <p className="mt-1 text-sm text-primary">{item.subtitle}</p>
               <ul className="mt-3 space-y-1.5 text-sm text-gray-600 dark:text-gray-300">

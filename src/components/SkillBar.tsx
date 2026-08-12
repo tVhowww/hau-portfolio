@@ -13,7 +13,7 @@ export function SkillBar({ skill, index }: { skill: Skill; index: number }) {
         <span className="min-w-0 truncate text-sm font-medium text-foreground dark:text-white">
           {skill.name}
         </span>
-        <span className="shrink-0 text-xs text-gray-500 dark:text-gray-400">{skill.level}%</span>
+        <span className="shrink-0 text-xs text-gray-600 dark:text-gray-300">{skill.level}%</span>
       </div>
       <div
         className="h-2 w-full overflow-hidden rounded-full bg-gray-200 transition-colors duration-300 dark:bg-gray-700"

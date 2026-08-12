@@ -156,7 +156,7 @@ const Contact = () => {
                   {errors.message}
                 </p>
               ) : (
-                <p id="message-hint" className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
+                <p id="message-hint" className="mt-1.5 text-xs text-gray-600 dark:text-gray-300">
                   Minimum 20 characters ({values.message.trim().length}/20).
                 </p>
               )}
@@ -198,7 +198,7 @@ const Contact = () => {
               <li key={label} className="flex items-start gap-3">
                 <Icon className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                 <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">{label}</p>
+                  <p className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-300">{label}</p>
                   {href ? (
                     <a
                       href={href}
